@@ -37,3 +37,4 @@ class Transfer_money(models.Model):
 
     def __str__(self):
         return self.SenderName
+        
