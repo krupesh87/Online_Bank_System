@@ -5,7 +5,7 @@ from home.models import Bank_statement
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
-from home.models import Transfer_money
+from home.models import Transfer_Money
 
 import datetime
 # Create your views here.
@@ -47,7 +47,7 @@ def transfer(request):
         Amount = int(request.POST.get('text3'))
         Date = datetime.datetime.now()
 
-        transfer = Transfer_money(SenderName=SenderName, SenderAccountNo=SenderAccountNo,
+        transfer = Transfer_Money(SenderName=SenderName, SenderAccountNo=SenderAccountNo,
                                   ReceiverAccountNo=ReceiverAccountNo, ReceiverName=ReceiverName, Amount=Amount,Date=Date)
         transfer.save()
         send = Customer.objects.filter(
@@ -90,5 +90,5 @@ def transfer(request):
 
 
 def transfer_money(request):
-    transfer = Transfer_money.objects.all()
+    transfer = Transfer_Money.objects.all()
     return render(request, 'transfer_hist.html', {'transfer': transfer})
