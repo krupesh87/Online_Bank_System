@@ -25,13 +25,14 @@ class Bank_statement(models.Model):
 
 
 class Transfer_money(models.Model):
+    
     SenderName = models.CharField(max_length=122,null=True,blank=True)
     SenderAccountNo = models.CharField(max_length=7,null=True,blank=True)
     ReceiverName = models.CharField(max_length=122,null=True,blank=True)
     ReceiverAccountNo = models.CharField(max_length=7,null=True,blank=True)
-    Amount = models.IntegerField(null=True,blank=True)
+    Amount = models.FloatField(null=True,blank=True)
     Date = models.DateTimeField(null=True,blank=True)
-    id=models.AutoField(null=False,blank=False)
+   
     objects = models.Manager()
 
     def __str__(self):
