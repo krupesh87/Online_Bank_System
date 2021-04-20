@@ -30,7 +30,7 @@ class Transfer_money(models.Model):
     ReceiverName = models.CharField(max_length=122,null=True,blank=True)
     ReceiverAccountNo = models.CharField(max_length=7,null=True,blank=True)
     Amount = models.IntegerField(null=True,blank=True)
-    Date = models.DateTimeField(null=True,blank=True)
+    Date = models.DateField(null=True,blank=True)
     objects = models.Manager()
 
     def __str__(self):
