@@ -46,6 +46,7 @@ def transfer(request):
         ReceiverName = request.POST.get('text5')
         Amount = int(request.POST.get('text3'))
         Date=datetime.date.now()
+
         transfer = Transfer_money(SenderName=SenderName, SenderAccountNo=SenderAccountNo,
                                   ReceiverAccountNo=ReceiverAccountNo, ReceiverName=ReceiverName, Amount=Amount,Date=Date)
         transfer.save()
@@ -88,5 +89,5 @@ def transfer(request):
 
 
 def transfer_money(request):
-    transfer = Transfer_money.objects.all().order_by('Date')
+    transfer = Transfer_money.objects.all().order_by('id').reverse()
     return render(request, 'transfer_hist.html', {'transfer': transfer})
