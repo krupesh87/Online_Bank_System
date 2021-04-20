@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank statement</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: url('https://i.ibb.co/KNVbqHM/bank2.jpg');
+            background-position: center;
+            background-attachment: fixed;
+            width: 100%;
+        }
+
+        header {
+            overflow: hidden;
+            display: inline;
+            position: sticky;
+            top: 6px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.507);
+        }
+
+        div {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.507);
+            border-radius: 20px;
+            width: 100%;
+            position: sticky;
+        }
+
+        div ul {
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0);
+
+        }
+
+        div ul li {
+            list-style-type: none;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: white;
+            float: left;
+            text-decoration: none;
+            text-align: center;
+            list-style: none;
+            padding: 13px 15px;
+            margin: 6px 6px;
+            background-color: rgb(0, 0, 0, 0);
+            border-radius: 20px;
+
+        }
+
+        div ul li a {
+            display: inline;
+            position: relative;
+            left: 250px;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 16px;
+            color: rgb(3, 3, 3);
+            margin: 7px 6px;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            border: 4px solid rgba(172, 255, 47, 0.116);
+        }
+
+        div li a:hover {
+            background-color: rgb(58, 186, 218);
+            font-size: 16px;
+            text-transform: capitalize;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            list-style: none;
+            padding: 13px 15px;
+            margin: 6px 6px;
+            border-radius: 20px;
+            border: 4px solid rgba(97, 143, 4, 0.041);
+
+
+        }
+
+        div a.active {
+            background-color: rgb(146, 224, 115);
+
+        }
+
+        .marquee {
+            width: 100%;
+            padding-top: 5px;
+            margin: auto;
+            height: 60px;
+            font-size: 40px;
+            font-family: Arial;
+            font-weight: bolder;
+            display: inline;
+            position: relative;
+            color: rgb(255, 0, 0);
+
+        }
+
+        #para {
+            font-size: 25px;
+            text-align: center;
+            color: rgb(166, 255, 0);
+        }
+
+        img {
+            height: 45px;
+            width: 60px;
+            float: left;
+        }
+
+        .Transfer {
+            width: 150px;
+            height: 130px;
+            background-position: center;
+            background-color: burlywood;
+        }
+
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            transform: translate(20%, 5%);
+            width: 800px;
+            height: 200px;
+            margin: auto;
+            font-size: 15px;
+            border: 1px solid #bdc3c7;
+            box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2), -1px -1px 9px rgb(0, 0, 0, 0);
+
+        }
+
+        tr {
+            transition: all .2s ease-in;
+            cursor: pointer;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        #header {
+            background-color: #16a085;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+            transform: scale(1.03);
+            box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2), -1px -1px 9px rgb(0, 0, 0, 0);
+        }
+
+        .btn1 {
+            background-color: blue;
+            color: white;
+            position: sticky;
+            float: center;
+            left: 500px;
+            border-radius: 25px;
+            font-size: 16px;
+            margin: auto;
+        }
+
+      
+        .container {
+            display: inline-block;
+            position: relative;
+            height: 180px;
+            width: 406px;
+            background-color: #f2f2f2;
+            border: 2px solid green;
+            top: 116px;
+            left: 400px;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .n {
+            display: inline-block;
+            position: relative;
+            top: 22px;
+        }
+
+        .no {
+            display: inline-block;
+            position: relative;
+            top: 22px;
+        }
+
+        .btn1 {
+            display: inline-block;
+            position: relative;
+            top: 27px;
+            left: 106px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid green;
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+        }
+
+       
+        .t1 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 55px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        .t2 {
+            display: inline-block;
+            position: relative;
+            top: 25px;
+            left: 20px;
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            border-radius: 9px;
+            padding: 2px 5px;
+        }
+
+        .btn {
+            overflow: auto;
+            display: inline-block;
+            position: relative;
+            top: -25px;
+            left: 250px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid rgb(93, 90, 230);
+            color: green;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+            font-weight: bold;
+            font-size: 16px ;
+        }
+        .btn:hover{
+            overflow: auto;
+            display: inline-block;
+            position: relative;
+            top: -20px;
+            left: 250px;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid rgb(93, 90, 230);
+            color: rgb(244, 247, 244);
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+            font-weight: bold;
+
+        }
+        .btn1:hover{
+            
+            display: inline-block;
+            position: relative;
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid rgb(93, 90, 230);
+            color: rgb(244, 247, 244);
+            border-radius: 8px;
+            cursor: pointer;
+            background: green;
+            font-weight: bold;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <ul>
+                <img src="https://i.ibb.co/6ZjfksG/logo.png" alt="Logo">
+
+                <li style="background-color: rgb(177, 117, 245)" style=" border: 2px solid white">
+                    ABC Bank</li>
+                <li><a href="home">Home</a></li>
+                <li><a class="active" href="data">Customer view</a></li>
+                <li><a href="transfer">Transfer money</a></li>
+                <li><a href="transfer_hist">Transfer History</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <br>
+    <br>
+
+    <section class="container">
+        <form action="/bank_statement_details" method="POST">
+            {% csrf_token %}
+
+            <label for="Name : " class="n">Name:</label>
+            <input type="text" name="Name" class="t1">
+            <br>
+            <br>
+            <label for="AccountNo" class="no">AccountNo</label>
+            <input type="text" name="AccountNo" class="t2"><br><br>
+            <button class="btn1" type="Submit"> Submit</button>
+
+
+        </form>
+        <a href="data"><button class="btn">View Customers</button></a>
+
+
+    </section>
+</body>
+
+</html>
