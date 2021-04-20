@@ -90,5 +90,5 @@ def transfer(request):
 
 
 def transfer_money(request):
-    transfer = Transfer_Money.objects.all()
+    transfer = Transfer_Money.objects.all().order_by('id').reverse()
     return render(request, 'transfer_hist.html', {'transfer': transfer})
